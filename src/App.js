@@ -1,11 +1,18 @@
 import React from 'react';
 import './App.css';
+import {connect} from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+function App(props) {
+    return (
+        <div className="App">
+            {props.books.map(b => <p>{b.name}</p>)}
+
+        </div>
+    );
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  books: state.books.books
+})
+
+export default connect(mapStateToProps, {})(App);
