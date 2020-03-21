@@ -42,6 +42,18 @@ app.get("/books/:id", cors(), (req, res, next) => {
 
 });
 
+app.delete("/books/:id", (req, res) => {
+    const bookId = parseInt(req.params.id, 10)
+    console.log(req.params.id)
+    books = books.filter(b => b.id !== bookId)
+    const delBook = books.find(b => b.id === bookId)
+    if (!delBook) {
+        return res.status(200).json(books)
+    } else {
+        return res.send("Something wrong").status(400)
+    }
+});
+
 
 app.listen(7000, () => {
     console.log("It's working", new Date())
