@@ -8,5 +8,10 @@ export const API = {
     async getBooks() {
         let response = await instance.get('books')
         return response.data
+    },
+    async deleteBook(bookId){
+        debugger
+        let response = await instance.delete(`books/${bookId}`)
+        return response.data
     }
 }
