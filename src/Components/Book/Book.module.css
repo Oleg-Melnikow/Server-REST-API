@@ -1,0 +1,45 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    min-width: 250px;
+    min-height: 250px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.containerBook{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerBook span{
+    padding: 5px;
+}
+
+img{
+    padding: 10px;
+    max-height: 240px;
+}
+
+.icon{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.icon i{
+    color: red;
+    line-height: 90px;
+    font-size: 36px;
+    padding: 5px;
+}
+
+.icon i:last-child{
+    color: yellow;
+    margin-left: 50px;
+}

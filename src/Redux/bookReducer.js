@@ -3,10 +3,7 @@ import {API} from "../API/api";
 export const SET_BOOKS = 'App/Reducer/SET_BOOKS'
 
 const initialState = {
-    books: [
-        {name: "Book1"},
-        {name: "Book2"}
-    ]
+    books: []
 }
 
 export const bookReducer = (state = initialState, action) => {
@@ -18,9 +15,9 @@ export const bookReducer = (state = initialState, action) => {
     }
 }
 
-export const setBooks = (books) => ({type: SET_BOOKS, books})
+export const setBooksSuccess = (books) => ({type: SET_BOOKS, books})
 
-export const loadBooksThunk = () => async (dispatch) => {
+export const setBooks = () => async (dispatch) => {
     let books = await API.getBooks()
-    dispatch(setBooks(books))
+    dispatch(setBooksSuccess(books))
 }

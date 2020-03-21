@@ -1,0 +1,17 @@
+.update{
+    position: absolute;
+    z-index: 2;
+    left: 2%;
+    top: 2%;
+}
+.update i{
+    min-height: 50px;
+    margin: 10px;
+    line-height: 90px;
+    font-size: 50px;
+    color:yellow;
+    transition: transform 2s ease;
+}
+.update i:hover{
+    transform: rotate(360deg);
+}
