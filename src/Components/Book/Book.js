@@ -1,22 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from "./Book.module.css"
+import UpdateBook from "../UpdateForm/UpdateBook";
 
 const Book = (props) => {
+
+    const [editMode, setEditMode] = useState(false)
+
+    const activateEditMode = () => {
+        setEditMode(true)
+    }
+    const deactivateEditMode = () => {
+        setEditMode(false)
+    }
 
     let deleteBook = () => {
         props.deleteBook(props.id)
     }
     return (
         <div className={style.container}>
-            <div className={style.containerBook}>
-                <img src={props.url} alt=""/>
-                <span>{props.name}</span>
-                <span>{props.author}</span>
-                <div className={style.icon}>
-                    <i className="fas fa-trash-alt" onClick={deleteBook}/>
-                    <i className="fas fa-edit"/>
-                </div>
-            </div>
+            {editMode
+                ? <UpdateBook deactivateEditMode={deactivateEditMode} updateBook={props.updateBook} url={props.url}
+                              name={props.name} author={props.author} id={props.id}/>
+                : <div className={style.containerBook}>
+                    <img src={props.url} alt=""/>
+                    <span>{props.name}</span>
+                    <span>{props.author}</span>
+                    <div className={style.icon}>
+                        <i className="fas fa-trash-alt" onClick={deleteBook}/>
+                        <i className="fas fa-edit" onClick={activateEditMode}/>
+                    </div>
+                </div>}
         </div>
     )
 }

@@ -24,6 +24,8 @@ let books = [
     }
 ]
 
+app.use(express.json())
+
 app.use(cors({
     origin: "*",
     method: ["GET", "PUT", "POST", "DELETE"]
