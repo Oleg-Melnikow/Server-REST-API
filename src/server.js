@@ -59,7 +59,6 @@ app.delete("/books/:id", (req, res) => {
 
 app.put("/books/:id", cors(), (req, res) => {
     const bookId = req.params.id
-    console.log(req.body)
     books.forEach((book) => {
         if (book.id === bookId) {
             book.name = req.body.name

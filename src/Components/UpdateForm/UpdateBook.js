@@ -18,12 +18,16 @@ const UpdateBook = (props) => {
         setState({...state, author: e.currentTarget.value})
     }
 
+    let changeUrl = (e) => {
+        setState({...state, url: e.currentTarget.value})
+    }
+
     return (
         <div>
             <div className={style.form}>
                 <input type="text" placeholder="Enter name book" name="name" onChange={changeName}/><br/>
                 <input type="text" placeholder="Enter author book" name="author" onChange={changeAuthor}/><br/>
-                <input type="text" placeholder="Enter url for image book" name="url"/><br/>
+                <input type="text" placeholder="Enter url for image book" name="url" onChange={changeUrl}/><br/>
             </div>
             <div className={style.icon}>
                 <i onClick={update} className="fas fa-plus-square"/>
