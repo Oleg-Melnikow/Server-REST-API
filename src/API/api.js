@@ -13,5 +13,9 @@ export const API = {
         debugger
         let response = await instance.delete(`books/${bookId}`)
         return response.data
+    },
+    async updateBook(book, bookId){
+        return instance.put(`books/${bookId}`, book)
+
     }
 }
