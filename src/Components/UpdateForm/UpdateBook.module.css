@@ -1,0 +1,38 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.icon{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.icon i{
+    padding: 10px;
+}
+.icon i:first-child{
+    color: #00ef00;
+}
+
+.icon i:last-child{
+    color: yellow;
+}
+
+.form input{
+    background: none;
+    color: white;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.form input:focus {
+    border-color: aqua;
+}
