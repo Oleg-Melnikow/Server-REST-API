@@ -70,6 +70,16 @@ app.put("/books/:id", cors(), (req, res) => {
     return res.json(newBook)
 })
 
+app.post("/books", cors(), (req, res) => {
+    const book = {
+        id: uuidv1(),
+        name: req.body.name || "Default author",
+        author: req.body.author || "Default author",
+        url: req.body.url || "Default url"
+    }
+    books.push(book)
+    return res.json(book)
+})
 
 app.listen(7000, () => {
     console.log("It's working", new Date())

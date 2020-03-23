@@ -10,12 +10,14 @@ export const API = {
         return response.data
     },
     async deleteBook(bookId){
-        debugger
         let response = await instance.delete(`books/${bookId}`)
         return response.data
     },
     async updateBook(book, bookId){
         return instance.put(`books/${bookId}`, book)
-
+    },
+    async addBook(book) {
+        let response = await instance.post('books', book)
+        return response.data
     }
 }
