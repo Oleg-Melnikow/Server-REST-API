@@ -16,3 +16,12 @@
   align-items: center;
   width: 100%;
 }
+
+.add{
+  min-height: 50px;
+  min-width: 50px;
+  margin: 10px;
+  line-height: 90px;
+  font-size: 70px;
+  color:green;
+}

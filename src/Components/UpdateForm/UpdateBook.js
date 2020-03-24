@@ -6,7 +6,7 @@ const UpdateBook = (props) => {
     const [state, setState] = useState({name: props.name, author: props.author, url: props.url})
 
     let update = () => {
-        props.updateBook(state, props.id)
+        props.updateBook(state, props.id) || props.updateBook(state)
         props.deactivateEditMode()
     }
 
