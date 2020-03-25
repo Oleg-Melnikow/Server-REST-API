@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import style from "./Book.module.css"
-import UpdateBook from "../UpdateForm/UpdateBook";
+import BookForm from "../Form/BookForm";
 
 const Book = (props) => {
 
@@ -16,11 +16,12 @@ const Book = (props) => {
     let deleteBook = () => {
         props.deleteBook(props.id)
     }
+
     return (
         <div className={style.container}>
             {editMode
-                ? <UpdateBook deactivateEditMode={deactivateEditMode} updateBook={props.updateBook} url={props.url}
-                              name={props.name} author={props.author} id={props.id}/>
+                ? <BookForm deactivateEditMode={deactivateEditMode} changeBook={props.updateBook} url={props.url}
+                            name={props.name} author={props.author} id={props.id}/>
                 : <div className={style.containerBook}>
                     <img src={props.url} alt=""/>
                     <span>{props.name}</span>

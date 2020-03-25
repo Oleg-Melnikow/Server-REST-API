@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import style from "./UpdateBook.module.css"
+import style from "./BookForm.module.css"
 
-const UpdateBook = (props) => {
+const BookForm = (props) => {
 
     const [state, setState] = useState({name: props.name, author: props.author, url: props.url})
 
     let update = () => {
-        props.updateBook(state, props.id) || props.updateBook(state)
+        props.changeBook(state, props.id) || props.changeBook(state)
         props.deactivateEditMode()
     }
 
@@ -37,4 +37,4 @@ const UpdateBook = (props) => {
     )
 }
 
-export default UpdateBook;
+export default BookForm;
